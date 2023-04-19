@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Email Confirmation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#F4F4F4">
+      <tr>
+        <td align="center" valign="top">
+          <table cellpadding="0" cellspacing="0" width="600" bgcolor="#FFFFFF">
+            <tr>
+              <td>
+                <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#007bff">
+                  <tr>
+                    <td align="center" style="padding: 40px 0;">
+                      <h1 style="color: #FFFFFF;">University Account Number</h1>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 20px;">
+                <p>Hello ${name},</p>
+                <p>Thank you for submitting your application to us. This is your user ID. You may use this to log in to your account and begin your adventure through our university. The password you used in our admission is the same; if you have forgotten it, simply utilize the forget password feature on our login page. Thank you very much!p>
+                <table cellspacing="0" cellpadding="0" width="100%">
+                  <tr>
+                    <td align="center" style="padding: 40px 0;">
+                      <table cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td align="center" style="border-radius: 4px;">
+                            <h1 style="color: #007bff;" >${code}</h1>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <p>If you did not register for our application, please ignore this email.</p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 20px; color: #777777;">
+                <p>Best regards,</p>
+                <p>The Team</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
