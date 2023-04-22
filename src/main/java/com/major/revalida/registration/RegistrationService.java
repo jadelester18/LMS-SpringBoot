@@ -35,6 +35,7 @@ public class RegistrationService {
 	private final EmailSender emailSender;
 	private final AppUserStudentRepository appUserRepository;
 	private final UserRepository userRepository;
+	private final AppUserStudentRepository appUserStudentRepository;
 
 	public String register(RegistrationRequest request) {
 		boolean isValidEmail = emailValidator.test(request.getEmail());
@@ -42,6 +43,13 @@ public class RegistrationService {
 		if(!isValidEmail) {
 			throw new IllegalStateException("Email is not valid.");
 		}
+		
+		boolean userEmailExist = appUserStudentRepository.findByEmail(request.getEmail()).isPresent();
+
+		if (userEmailExist) {
+			throw new IllegalStateException("Email Already Taken.");
+		}
+		
 		 String token = appUserService.signUpUser(new AppUserStudent(
 				request.getEmail().toLowerCase(),
 				request.getPassword(),

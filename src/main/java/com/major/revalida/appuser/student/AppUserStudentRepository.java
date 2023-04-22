@@ -1,5 +1,6 @@
 package com.major.revalida.appuser.student;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.major.revalida.appuser.admin.crud.program.Program;
 
 @Repository
 @Transactional(readOnly = true)
@@ -30,6 +32,9 @@ public interface AppUserStudentRepository extends JpaRepository<AppUserStudent, 
 	    @Query("UPDATE AppUserStudent a " +
 	            "SET a.enabled = TRUE WHERE a.email = ?1")
 	    int enableAppUser(String email);
+
+	List<AppUserStudent> findByProgramAndYearLevelAndSection_SectionName(Program program, Integer yearLevel,
+			String sectionName);
 
 	
 

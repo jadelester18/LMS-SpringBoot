@@ -30,10 +30,11 @@ public class Program {
     private String programTitle;
     
     @ManyToOne
-    @JoinColumn(nullable = false, name = "collegeId")
+    @JoinColumn(nullable = false, name = "collegeId", referencedColumnName = "collegeId")
     private College college;
+    
     @ManyToOne
-    @JoinColumn(nullable = false, name = "degreeId")
+    @JoinColumn(nullable = false, name = "degreeId", referencedColumnName = "degreeId")
     private Degree degree;
     
     

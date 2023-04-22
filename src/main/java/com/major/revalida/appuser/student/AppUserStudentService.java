@@ -54,16 +54,16 @@ public class AppUserStudentService implements UserDetailsService {
 	public String signUpUser(AppUserStudent appUser, User user) {
 		boolean userEmailExist = appUserStudentRepository.findByEmail(appUser.getEmail()).isPresent();
 
-		boolean userNameExist = appUserStudentRepository.findByFirstNameAndMiddleNameAndLastName(appUser.getFirstName(),
-				appUser.getMiddleName(), appUser.getLastName()).isPresent();
+//		boolean userNameExist = appUserStudentRepository.findByFirstNameAndMiddleNameAndLastName(appUser.getFirstName(),
+//				appUser.getMiddleName(), appUser.getLastName()).isPresent();
 
 		if (userEmailExist) {
 			throw new IllegalStateException("Email Already Taken.");
 		}
 
-		if (userNameExist) {
-			throw new IllegalStateException("Your Name is Already Exist.");
-		}
+//		if (userNameExist) {
+//			throw new IllegalStateException("Your Name is Already Exist.");
+//		}
 
 		String encodedPassword = bCryptPasswordEncoder.encode(appUser.getPassword());
 

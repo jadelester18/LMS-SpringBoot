@@ -1,5 +1,6 @@
 package com.major.revalida.appuser.admin.crud.section;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "section")
 public class Section {
+
 
 	@Id
 	@GeneratedValue(
